@@ -1,0 +1,12 @@
+.git
+.env
+.env.*
+!.env.example
+database/database.sqlite
+portfolio-dila
+node_modules
+tests
+vendor
+bootstrap/cache/*.php
+storage/logs/*
+.DS_Store
