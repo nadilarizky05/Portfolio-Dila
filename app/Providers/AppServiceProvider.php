@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Di Vercel semua trafik lewat HTTPS. Paksa link asset() memakai https
+        // supaya CSS/JS tidak diblokir browser sebagai mixed content.
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 }
