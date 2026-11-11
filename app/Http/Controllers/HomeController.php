@@ -18,7 +18,7 @@ class HomeController extends Controller
             ],
             'heroPhotos' => [
                 'home/1.jpeg',
-                'home/2.JPG',
+                'home/2.PNG',
                 'home/3.jpeg',
                 'home/4.JPG',
             ],
