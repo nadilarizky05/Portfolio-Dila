@@ -2,6 +2,10 @@
     root * /app/public
     encode zstd gzip
 
+    # Foto, CSS, dan JS jarang berubah: boleh disimpan browser & CDN Vercel.
+    @static path /images/* /css/* /js/* /favicon.ico
+    header @static Cache-Control "public, max-age=604800, s-maxage=31536000"
+
     php_server {
         try_files {path} index.php
     }

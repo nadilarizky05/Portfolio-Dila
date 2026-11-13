@@ -15,6 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
         // Vercel berada di depan Laravel sebagai proxy HTTPS.
         // Tanpa ini, asset() menghasilkan link http:// dan CSS diblokir browser.
         $middleware->trustProxies(at: '*');
+
+        // Paling luar, supaya Cache-Control & penghapusan cookie berlaku di response final.
+        $middleware->web(prepend: [
+            \App\Http\Middleware\CachePublicPages::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
