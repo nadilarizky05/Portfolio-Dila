@@ -22,7 +22,7 @@
         <div class="resume-item">
             <div class="resume-item-left">
                 @if ($hasImage($experience->logo))
-                    <img src="{{ $assetV('images/logos/'.$experience->logo) }}" alt="{{ $experience->company }}" class="company-logo">
+                    <img src="{{ $assetV('images/logos/'.$experience->logo) }}" alt="{{ $experience->company }}" class="company-logo" loading="lazy" decoding="async">
                 @else
                     <div class="company-logo img-placeholder"></div>
                 @endif
@@ -63,7 +63,7 @@
         <div class="resume-item">
             <div class="resume-item-left">
                 @if ($hasImage($education->logo))
-                    <img src="{{ $assetV('images/logos/'.$education->logo) }}" alt="{{ $education->institution }}" class="company-logo">
+                    <img src="{{ $assetV('images/logos/'.$education->logo) }}" alt="{{ $education->institution }}" class="company-logo" loading="lazy" decoding="async">
                 @else
                     <div class="company-logo img-placeholder"></div>
                 @endif
@@ -93,7 +93,7 @@
             @foreach ($achievements as $achievement)
                 <div class="ptm-item">
                     @if ($hasPhoto($achievement->image))
-                        <img src="{{ $assetV('images/'.$achievement->image) }}" alt="{{ $achievement->title }}">
+                        <img src="{{ $assetV('images/'.$achievement->image) }}" alt="{{ $achievement->title }}" loading="lazy" decoding="async">
                     @else
                         <div class="img-placeholder" style="height: 160px;"></div>
                     @endif
@@ -145,7 +145,7 @@
         <div class="resume-item">
             <div class="resume-item-left">
                 @if ($hasImage($volunteering->logo))
-                    <img src="{{ $assetV('images/logos/'.$volunteering->logo) }}" alt="{{ $volunteering->organization }}" class="company-logo">
+                    <img src="{{ $assetV('images/logos/'.$volunteering->logo) }}" alt="{{ $volunteering->organization }}" class="company-logo" loading="lazy" decoding="async">
                 @else
                     <div class="company-logo img-placeholder"></div>
                 @endif

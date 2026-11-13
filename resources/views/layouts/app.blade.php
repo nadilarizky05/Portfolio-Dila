@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}">
 </head>
 <body>
+    <div id="page-loader" aria-hidden="true"></div>
     <div class="layout">
         <aside class="sidebar">
             <div class="sidebar-header">
