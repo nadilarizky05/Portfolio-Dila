@@ -7,7 +7,11 @@
     $assetV = fn ($relativePath) => asset($relativePath).'?v='.filemtime(public_path($relativePath));
     // Sentence case buat label "Back to ..." (cuma huruf depan yang kapital), tapi tetep
     // jaga "iOS" ke-stylized dengan benar, gak ikut kelindes jadi "Ios".
-    $sentenceCase = fn (string $name) => str_ireplace('ios', 'iOS', ucfirst(strtolower($name)));
+    $sentenceCase = fn (string $name) => str_ireplace(
+        ['app store', 'testflight', 'ios'],
+        ['App Store', 'TestFlight', 'iOS'],
+        ucfirst(strtolower($name))
+    );
     $slides = $project->images->filter(fn ($image) => $hasImage($image->image_path))->values();
     // Baca rasio asli foto pertama, biar frame HP/square-nya persis ngikutin rasio fotonya sendiri.
     $slideRatio = null;

@@ -666,11 +666,13 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    align-items: start; /* tiap card tingginya ngikutin konten sendiri, gak dipaksa stretch
-                            samain tinggi tetangganya di row yang sama */
+    align-items: stretch; /* card di row yang sama tingginya disamain biar simetris,
+                              walau panjang deskripsinya beda-beda */
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
     background: var(--sidebar-bg);
     border-radius: 12px;
     overflow: hidden;
@@ -787,8 +789,17 @@ a {
     right: -47px;
 }
 
+/* Body ngisi sisa tinggi card, jadi "See More" selalu nempel di bawah & sejajar antar card */
 .project-card .body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
     padding: 1.2rem;
+}
+
+.project-card .body .see-more {
+    margin-top: auto;
 }
 
 .project-card h3 {
